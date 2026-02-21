@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset UTF-8>
+        <link href="style.css" rel="stylesheet" type="text/css" media="all">
+        <script src ="script.js"></script>
+        <title>Samsung Solve for tomorrow 2026 #B103</title>
+    </head>
+    <body>
+        <h1 id = "title">Smart Toilet System</h1>
+        <h3 id = "t2">#B103 -- Cheung Chuk Shan College</h3>
+        <hr>
+        <div class="container">
+            <div class="bento">
+                <div class = "control">
+                    <label>Light levels <span class="value-display" id = "lightVal">96%</span></label>
+                    <input type="range" id = "light" min="0" max="100" value ="96" oninput="SysMaint()">
+                </div>
+                <div class = "control">
+                    <label>M O I S T meter <span class="value-display" id = "wetVal">23%</span></label>
+                    <input type="range" id = "wet" min="0" max="100" value ="23" oninput="SysMaint()">
+                </div>
+                <div class = "control">
+                    <label>Smell <span class="value-display" id = "smellVal">2%</span></label>
+                    <input type="range" id = "smell" min="0" max="100" value ="2" oninput="SysMaint()">
+                </div>
+                <div id="status">
+                    <p class="action-text" id="output">Calculating...</p>
+                </div>
+                <button onclick="fixBtn()">Fix everying</button>
+            </div>
+            <div class="intro">
+                <p>
+                    Our top-end AI model provides situationanalysis of all kinds<br>
+                    The Box on the right is an teractive simulation of different cases the bathroom detects.
+                    <br>Move the sliders around and see how the system reacts.
+                </p>
+            </div>
+        </div>
+    </body>
+
+</html>
