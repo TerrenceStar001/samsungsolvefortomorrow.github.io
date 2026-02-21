@@ -10,29 +10,48 @@
         <h1 id = "title">Smart Toilet System</h1>
         <h3 id = "t2">#B103 -- Cheung Chuk Shan College</h3>
         <hr>
+        <h2 id =  "t2">AI Control system</h2>
         <div class="container">
             <div class="bento">
+                <h3 id = "t4">Environment</h3>
                 <div class = "control">
                     <label>Light levels <span class="value-display" id = "lightVal">96%</span></label>
-                    <input type="range" id = "light" min="0" max="100" value ="96" oninput="SysMaint()">
+                    <input type="range" autocomplete = "off" id = "light" min="0" max="100" value ="96" oninput="SysMaint()">
                 </div>
                 <div class = "control">
                     <label>M O I S T meter <span class="value-display" id = "wetVal">23%</span></label>
-                    <input type="range" id = "wet" min="0" max="100" value ="23" oninput="SysMaint()">
+                    <input type="range" autocomplete = "off" id = "wet" min="0" max="100" value ="23" oninput="SysMaint()">
                 </div>
                 <div class = "control">
                     <label>Smell <span class="value-display" id = "smellVal">2%</span></label>
-                    <input type="range" id = "smell" min="0" max="100" value ="2" oninput="SysMaint()">
+                    <input type="range" autocomplete = "off" id = "smell" min="0" max="100" value ="2" oninput="SysMaint()">
                 </div>
                 <div id="status">
                     <p class="action-text" id="output">Calculating...</p>
                 </div>
-                <button onclick="fixBtn()">Fix everying</button>
+            </div>
+            <div class="bentwo">
+                <h3 id = "t4">Bio-Reactor Health</h3>
+                <div class = "control">
+                    <label>Methane Concentration <span class="value-display" id = "methanePurityVal">10%</span></label>
+                    <input type="range" autocomplete = "off" id = "meth" min="0" max="100" value ="10" oninput="methank()">
+                </div>
+                <div class = "control">
+                    <label>Digester Temperature <span class="value-display" id = "digesterTemperatureVal">37c</span></label>
+                    <input type="range" autocomplete = "off" id = "temp" min="0" max="100" value ="37" oninput="methank()">
+                </div>
+                <div class = "control">
+                    <label>Digster Fullness <span class="value-display" id = "fullnessVal">2%</span></label>
+                    <input type="range" autocomplete = "off" id = "full" min="0" max="100" value ="2" oninput="methank()">
+                </div>
+                <div id="bstat">
+                    <p class="action-text" id="gas">Biogas Generator running normally</p>
+                </div>
             </div>
             <div class="intro">
                 <p>
                     Our top-end AI model provides situationanalysis of all kinds<br>
-                    The Box on the right is an teractive simulation of different cases the bathroom detects.
+                    The Boxes on the right is an interactive simulation of different cases the bathroom detects.
                     <br>Move the sliders around and see how the system reacts.
                 </p>
             </div>

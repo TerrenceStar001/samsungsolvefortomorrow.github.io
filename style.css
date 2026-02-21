@@ -29,6 +29,23 @@ hr{
     max-width:500px;
     width:100%;
     padding:10px;
+    margin-left:10px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+.bentwo{
+    background-color:#FFFFFF;
+    border-radius: 8px;
+    color:#27264A;
+    max-width:500px;
+    width:100%;
+    padding:10px;
+    margin-left:10px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+#t4{
+    font-size: 26px;
+    text-align:center;
+    border-bottom:2px solid #4CAF50;
 }
 .intro{
     margin: 10px;
@@ -66,6 +83,15 @@ input[type="range"]{
     min-height:60px;
     transition:all 0.3s ease;
 }
+#bstat{
+    margin-top:30px;
+    padding:15px;
+    border-radius:8px;
+    background:#e8f5e9;
+    border-left:5px solid #4CAF50;
+    min-height:60px;
+    transition:all 0.3s ease;
+}
 .action-text{
     font-weight:600;
     color:#1b5e20;
@@ -77,4 +103,13 @@ input[type="range"]{
 }
 .warning .action-text{
     color:#e65100;
+}
+
+.critwarn{
+    background: #E8B0B0;
+    border-left-color:#D98282 !important;
+}
+
+.critwarn .action-text{
+    color: #BA3232;
 }
