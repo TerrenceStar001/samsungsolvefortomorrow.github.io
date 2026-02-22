@@ -11,38 +11,48 @@
         <h3 id = "t2">#B103 -- Cheung Chuk Shan College</h3>
         <hr>
         <h2 id =  "t2">AI Control system</h2>
+        <div class = "container">
+            <img src="vig.gif" style="border-radius:8px; border: 1px solid #30363d; box-shadow: 0 10px 15px rgba(0,0,0,0.2);">
+        </div>
+        <div class = " container intro" style = "text-align:center;">
+                <p>Our top-end AI model provides situation analysis of all kinds<br>
+                    The Boxes on the right is an interactive simulation of different cases the bathroom detects.
+                    <br>Move the sliders around and see how the system reacts.<br>
+                    Once an error is detected, the system updates the central database which sends appropriate help.</p>
+            </div>
+        <br>
         <div class="container">
             <div class="bento">
-                <h3 id = "t4">Environment</h3>
+                <h3 id = "t4">Bathroom Environment</h3>
                 <div class = "control">
                     <label>Light levels <span class="value-display" id = "lightVal">96%</span></label>
-                    <input type="range" autocomplete = "off" id = "light" min="0" max="100" value ="96" oninput="SysMaint()">
+                    <input type="range" class = "slide" autocomplete = "off" id = "light" min="0" max="100" value ="96" oninput="SysMaint()">
                 </div>
                 <div class = "control">
                     <label>M O I S T meter <span class="value-display" id = "wetVal">23%</span></label>
-                    <input type="range" autocomplete = "off" id = "wet" min="0" max="100" value ="23" oninput="SysMaint()">
+                    <input type="range" class = "slide" autocomplete = "off" id = "wet" min="0" max="100" value ="23" oninput="SysMaint()">
                 </div>
                 <div class = "control">
                     <label>Smell <span class="value-display" id = "smellVal">2%</span></label>
-                    <input type="range" autocomplete = "off" id = "smell" min="0" max="100" value ="2" oninput="SysMaint()">
+                    <input type="range" class = "slide" autocomplete = "off" id = "smell" min="0" max="100" value ="2" oninput="SysMaint()">
                 </div>
                 <div id="status">
                     <p class="action-text" id="output">Calculating...</p>
                 </div>
             </div>
             <div class="bentwo">
-                <h3 id = "t4">Bio-Reactor Health</h3>
+                <h3 id = "t4">Biogas tank & Anaerobic digester Health</h3>
                 <div class = "control">
                     <label>Methane Concentration <span class="value-display" id = "methanePurityVal">10%</span></label>
-                    <input type="range" autocomplete = "off" id = "meth" min="0" max="100" value ="10" oninput="methank()">
+                    <input type="range" class = "slide" autocomplete = "off" id = "meth" min="0" max="100" value ="10" oninput="methank()">
                 </div>
                 <div class = "control">
                     <label>Digester Temperature <span class="value-display" id = "digesterTemperatureVal">37c</span></label>
-                    <input type="range" autocomplete = "off" id = "temp" min="0" max="100" value ="37" oninput="methank()">
+                    <input type="range" class = "slide" autocomplete = "off" id = "temp" min="0" max="100" value ="37" oninput="methank()">
                 </div>
                 <div class = "control">
-                    <label>Digster Fullness <span class="value-display" id = "fullnessVal">2%</span></label>
-                    <input type="range" autocomplete = "off" id = "full" min="0" max="100" value ="2" oninput="methank()">
+                    <label>Digester Fullness <span class="value-display" id = "fullnessVal">2%</span></label>
+                    <input type="range" class = "slide" autocomplete = "off" id = "full" min="0" max="100" value ="2" oninput="methank()">
                 </div>
                 <div id="bstat">
                     <p class="action-text" id="gas">Biogas Generator running normally</p>
@@ -50,12 +60,49 @@
             </div>
             <div class="intro">
                 <p>
-                    Our top-end AI model provides situationanalysis of all kinds<br>
-                    The Boxes on the right is an interactive simulation of different cases the bathroom detects.
-                    <br>Move the sliders around and see how the system reacts.
+
                 </p>
             </div>
         </div>
+        <br>
+        <div class= "container">
+            <div class ="bentwo">
+                <div class= "control">
+                    <h3>Soil Sensor</h3>
+                    <div><span style="border-radius:50%; width:15px; height: 15px; background: #37943B; display:inline-block;"></span><span style ="padding: 5px; display:inline;font-size:0.80rem; color:var(--text);">Sensor Online</span></div>
+                    <div class = "g-cont">
+                        <div class = "control">
+                            <label>Nitrogen(N) <span class="npk" style = "color: var(--ncol)" id = "nval">31 mg/kg</span></label>
+                            <input type="range" class = "ni" autocomplete = "off" id = "nsli" min="0" max="100" value ="31" oninput="updateLab()">
+                            <label>Phosphoros(P) <span class="npk" style = "color: var(--pcol)" id = "pval">35 mg/kg</span></label>
+                            <input type="range" class = "pi" autocomplete = "off" id = "psli" min="0" max="100" value ="35" oninput="updateLab()">
+                            <label>Potassium(K) <span class="npk" style = "color: var(--kcol)" id = "kval">20 mg/kg</span></label>
+                            <input type="range" class = "ki" autocomplete = "off" id = "ksli" min="0" max="100" value ="20" oninput="updateLab()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "bentwo">
+                <div class = "control">
+                        <h3>Analysis</h3>
+                        <div class = "gcont">
+                            <div class = "bar-bg"><div id = "fill-n" class = "bar-fill" style="background:var(--ncol); width:31%;s"></div></div>
+                            <div class = "bar-bg"><div id = "fill-p" class = "bar-fill" style="background:var(--pcol); width:35%;s"></div></div>
+                            <div class = "bar-bg"><div id = "fill-k" class = "bar-fill" style="background:var(--kcol); width:20%;s"></div></div>
+                        </div>
+                        <p id = "health" style="margin-top:20px; font-weight:bold; color:#8b949e;">Calculating Soil NPK concentrations...</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="intro2">
+                <p>
+                    This is the Smart Fertilizer Analytics Module of the intergrated waste-to-resource system<br>
+                    It leverages real-time soil nutrient sensing (N,P,K) and AI-driven diagnostics to access fertilizer efficacy,flag imbalances, and ensure the safe, sustainable application of digestable-driven fertilizers.
+                </p>
+        </div>
+        <br>
+
     </body>
 
 </html>

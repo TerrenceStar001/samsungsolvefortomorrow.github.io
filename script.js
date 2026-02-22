@@ -99,22 +99,47 @@ function methank(){
     }
     if(critwrn){box2.classList.add("critwarn");}else{box2.classList.remove("critwarn");}
 }
-function fixBtn(){
-    var light = document.getElementById("light").value;
-    var wet = document.getElementById("wet").value;
-    var smell = document.getElementById("smell").value;
-    const output = document.getElementById("output");
-    const box = document.getElementById("status");
 
-    light = 96;
-    wet = 23;
-    smell = 2;
-    let message = "Bathroom isclean and well maintained";
+function updateLab(){
+    const n = parseInt(document.getElementById('nsli').value);
+    const p = parseInt(document.getElementById('psli').value);
+    const k = parseInt(document.getElementById('ksli').value);
 
-    document.getElementById("lightVal").innerText = light + "%";
-    document.getElementById("wetVal").innerText = wet + "%";
-    document.getElementById("smellVal").innerText = smell + "%";
+    document.getElementById('nval').innerText = n + " mg/kg";
+    document.getElementById('pval').innerText = p + " mg/kg";
+    document.getElementById('kval').innerText = k + " mg/kg";
 
-    output.innerText = message;
-    box.classList.remove("warning");
+    document.getElementById('fill-n').style.width = (n) + "%";
+    document.getElementById('fill-p').style.width = p + "%";
+    document.getElementById('fill-k').style.width = (k) + "%";
+
+    const statbox = document.getElementById('health');
+
+    if(n<20&&p<30&&k<10){
+        statbox.innerText= "NPK levels low: Possibly dangers include chlorosis, poor growth including flowers and fruits.";
+        statbox.style.color = "#f85149";
+    }else if(n<20&&p<30){
+        statbox.innerText= "Nitrogen and Phosphorous levels low: potential dangers include poor growth,chlorosis etc.";
+        statbox.style.color = "#f85149";
+    }else if(n<20&&k<10){
+        statbox.innerText= "Nitrogen and Potassium levels low: potential dangers include poor growth of flowers and fruits and curled leaves with brown edges";
+        statbox.style.color = "#f85149";
+    }else if(p<30&&k<10){
+        statbox.innerText= "Phosphorous and Potassium levels low: potential dangers include poor growth of roots and purple patches on leaves and poor growth of flowers and fruits and curled leaves";
+        statbox.style.color = "#f85149";
+    }
+    else if(n<20){
+        statbox.innerText = "Nitrogen Levels low: May lead to poor growth & chlorosis";
+        statbox.style.color = "#f85149";
+    }else if(p<30){
+        statbox.innerText = "Phosphorous levels low: May lead to poor growth of roots and purple patches on leaves";
+        statbox.style.color = "#f85149";
+    }else if(k < 10){
+        statbox.innerText = "Potassium levels low: May lead to poor growth of flowers and fruits and curled leaves with brown edges";
+        statbox.style.color = "#f85149";
+    }
+    else{
+        statbox.innerText = "Soil status BALANCED: NPK levels are at perfect concentration for growth of plants";
+        statbox.style.color = "#7ee787";
+    }
 }
