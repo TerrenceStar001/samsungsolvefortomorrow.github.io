@@ -1,3 +1,6 @@
+let lastmessage = "";
+let lastmessage2 = "";
+let eventcount = 0;
 function SysMaint(){
     const light = document.getElementById("light").value;
     const wet = document.getElementById("wet").value;
@@ -48,6 +51,11 @@ function SysMaint(){
         box.classList.remove("warning");
     }
     if(critwrn){box.classList.add("critwarn");}else{box.classList.remove("critwarn");}
+
+    if(message!==lastmessage){
+        logEvent1(message,light,wet,smell);
+        lastmessage=message;
+    }
 }
 function methank(){
     const meth = document.getElementById("meth").value;
@@ -98,6 +106,11 @@ function methank(){
         box2.classList.remove("warning");
     }
     if(critwrn){box2.classList.add("critwarn");}else{box2.classList.remove("critwarn");}
+
+    if(m2!==lastmessage2){
+        logEvent2(m2,meth,temp,full);
+        lastmessage2=m2;
+    }
 }
 
 function updateLab(){
@@ -142,4 +155,42 @@ function updateLab(){
         statbox.innerText = "Soil status BALANCED: NPK levels are at perfect concentration for growth of plants";
         statbox.style.color = "#7ee787";
     }
+}
+function logEvent1(msg,p1,p2,p3){
+    const logContent = document.getElementById("log-content");
+    const logCounter = document.getElementById("log-counter");
+
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString([],{ hour12:false,hour:"2-digit",minute:"2-digit", second:"2-digit"});
+
+    const entry = document.createElement("div");
+    entry.className = "log-entry";
+
+    const dataContext = `<span class="log-change">(Light: ${p1}%, Wet: ${p2}%, Smell: ${p3}%)</span>`;
+
+    entry.innerHTML = `<span class="log-time">[${timeStr}]</span> ${msg} <br> ${dataContext}`;
+
+    logContent.appendChild(entry);
+
+    eventcount++;
+    logCounter.innerText = `${eventcount} Events`;
+}
+function logEvent2(msg,p1,p2,p3){
+    const logContent = document.getElementById("log-content");
+    const logCounter = document.getElementById("log-counter");
+
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString([],{ hour12:false,hour:"2-digit",minute:"2-digit", second:"2-digit"});
+
+    const entry = document.createElement("div");
+    entry.className = "log-entry";
+
+    const dataContext = `<span class="log-change">(Methane Concentration: ${p1}%, Digester Temperature: ${p2}%, Digester Fullness: ${p3}%)</span>`;
+
+    entry.innerHTML = `<span class="log-time">[${timeStr}]</span> ${msg} <br> ${dataContext}`;
+
+    logContent.appendChild(entry);
+
+    eventcount++;
+    logCounter.innerText = `${eventcount} Events Recorded`;
 }

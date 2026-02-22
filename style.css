@@ -171,4 +171,45 @@ label{
 .critwarn .action-text{
     color: #BA3232;
 }
-
+#log-panel{
+    background:#1e1e1e;
+    color:#dcdcdc;
+    padding:1.5rem;
+    border-radius: 15px;
+    width:100%;
+    max-width:550px;
+    font-family:'Consolas','Monaco',monospace;
+    font-size:0.85rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: block;
+    margin:10px;
+    border: 1px solid #30363d;
+}
+.log-header{
+    color: #4CAF50;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display:flex;
+    justify-content: space-between;
+}
+#log-content{
+    height:200px;
+    overflow-y: auto;
+    display:flex;
+    flex-direction: column-reverse;
+}
+.log-entry{
+    margin-bottom:8px;
+    line-height:1.4;
+    border-left: 2px solid #444;
+    padding-left:10px;
+}
+.log-time{
+    color:#888;
+    font-weight:bold;
+    margin-right:8px;;
+}
+.log-change{
+    color:#569cd6
+}
